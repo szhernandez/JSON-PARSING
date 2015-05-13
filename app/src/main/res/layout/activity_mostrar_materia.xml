@@ -1,0 +1,30 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.windows.json_parsing.mostrar_materia"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/txtid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12dip"
+        android:textStyle="bold"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:textColor="#000000"/>
+    <!-- Email Label -->
+    <TextView android:id="@+id/txtonmbre"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Accent"
+        android:textSize="25dp"/>
+    <!-- Mobile Label -->
+    <TextView android:id="@+id/txtprofesor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"/>
+</LinearLayout>
