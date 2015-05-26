@@ -40,17 +40,17 @@ public class MainActivity extends ListActivity {
     private static final String TAG_NAME = "nombre";
     private static final String TAG_PROFESOR = "profesor";
 
-    // contacts JSONArray
-    JSONArray contacts = null;
+    // JSONArray materias
+    JSONArray Amaterias = null;
 
-    // Hashmap for ListView
-    ArrayList<HashMap<String, String>> contactList;
+    // Hashmap para el ListView
+    ArrayList<HashMap<String, String>> materiasList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        contactList = new ArrayList<HashMap<String, String>>();
+        materiasList = new ArrayList<HashMap<String, String>>();
 
         ListView lv = getListView();
 
@@ -79,7 +79,7 @@ public class MainActivity extends ListActivity {
         });
 
         // Calling async task to get json
-        new GetContacts().execute();
+        new GetMaterias().execute();
     }
 
 
@@ -108,7 +108,7 @@ public class MainActivity extends ListActivity {
     /**
      * Async task class to get json by making HTTP call
      * */
-    private class GetContacts extends AsyncTask<Void, Void, Void> {
+    private class GetMaterias extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -136,11 +136,11 @@ public class MainActivity extends ListActivity {
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
-                    contacts = jsonObj.getJSONArray(TAG_MATERIAS);
+                    Amaterias = jsonObj.getJSONArray(TAG_MATERIAS);
 
                     // looping through All Contacts
-                    for (int i = 0; i < contacts.length(); i++) {
-                        JSONObject c = contacts.getJSONObject(i);
+                    for (int i = 0; i < Amaterias.length(); i++) {
+                        JSONObject c = Amaterias.getJSONObject(i);
 
                         String id = c.getString(TAG_ID);
                         String name = c.getString(TAG_NAME);
@@ -159,7 +159,7 @@ public class MainActivity extends ListActivity {
 
 
                         // adding contact to contact list
-                        contactList.add(contact);
+                        materiasList.add(contact);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -181,7 +181,7 @@ public class MainActivity extends ListActivity {
              * Updating parsed JSON data into ListView
              * */
             ListAdapter adapter = new SimpleAdapter(
-                    MainActivity.this, contactList,
+                    MainActivity.this, materiasList,
                     R.layout.list_item, new String[] { TAG_ID, TAG_NAME, TAG_PROFESOR
                   }, new int[] { R.id.id,
                     R.id.nombre,R.id.profesor });
