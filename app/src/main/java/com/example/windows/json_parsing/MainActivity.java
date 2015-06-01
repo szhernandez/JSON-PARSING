@@ -1,5 +1,6 @@
 package com.example.windows.json_parsing;
 
+import android.app.ActionBar;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ListActivity  {
 
     private ProgressDialog pDialog;
 

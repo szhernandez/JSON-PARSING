@@ -3,6 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_mostrar_materia">Materia</string>
-    <string name="titulillo">      Listado de materias</string>
+    <string name="title_activity_mostrar_materia">Class</string>
+    <string name="titulillo">      List of school classes</string>
 </resources>

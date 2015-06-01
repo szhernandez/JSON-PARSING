@@ -12,7 +12,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="    LISTADO DE MATERIAS"
+        android:text="@string/titulillo"
         android:textSize="18dp"
         android:textColor="#ffffff"
         android:gravity="center_vertical"
